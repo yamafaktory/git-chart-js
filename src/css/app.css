@@ -1,0 +1,61 @@
+:root {
+  --pink-100: rgba(248, 187, 208, 1);
+  --pink-500: rgba(233, 30, 99, 1);
+  --pink-700: rgba(194, 24, 91, 1);
+  --light-blue-a200: rgba(64, 196, 255, 1);
+  --white: rgba(255, 255, 255, 1);
+}
+
+main,
+header {
+  width: 100%;
+}
+
+.app-name {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 5rem;
+  color: var(--white);
+}
+
+.full-height-flex {
+  min-height: 100vh;
+}
+
+.half-height-flex {
+  height: 50vh;
+}
+
+.flex {
+	display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row-flex {
+  flex-direction: row;
+}
+
+.column-flex {
+  flex-direction: column;
+}
+
+.flex-start {
+  align-self: flex-start;
+}
+
+.flex-end {
+  align-self: flex-end;
+}
+
+.pink-100 {
+  background: var(--pink-100);
+}
+
+.pink-500 {
+  background: var(--pink-500);
+}
+
+.pink-700 {
+  background: var(--pink-700);
+}

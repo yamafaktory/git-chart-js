@@ -1,0 +1,74 @@
+main,
+header {
+  width: 100%;
+}
+
+.app-name {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 5rem;
+  color: rgba(255, 255, 255, 1);
+}
+
+.full-height-flex {
+  min-height: 100vh;
+}
+
+.half-height-flex {
+  height: 50vh;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.row-flex {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.column-flex {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.flex-start {
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+}
+
+.flex-end {
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+.pink-100 {
+  background: rgba(248, 187, 208, 1);
+}
+
+.pink-500 {
+  background: rgba(233, 30, 99, 1);
+}
+
+.pink-700 {
+  background: rgba(194, 24, 91, 1);
+}

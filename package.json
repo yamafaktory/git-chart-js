@@ -1,0 +1,26 @@
+{
+  "name": "git-chart-js",
+  "description": "A simple chart rendering Angular app",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "bower": "*",
+    "browserify": "*",
+    "browser-sync": "*",
+    "es6ify": "*",
+    "gulp": "*",
+    "gulp-concat": "*",
+    "gulp-htmlmin": "*",
+    "gulp-imagemin": "*",
+    "gulp-jshint": "*",
+    "gulp-myth": "*",
+    "gulp-ng-annotate": "*",
+    "gulp-streamify": "*",
+    "gulp-svgmin": "*",
+    "gulp-uglify": "*",
+    "jshint-stylish": "*",
+    "merge-stream": "*",
+    "myth": "*",
+    "vinyl-source-stream": "*"
+  }
+}
