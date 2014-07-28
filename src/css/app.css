@@ -11,8 +11,11 @@ header {
   width: 100%;
 }
 
-.app-name {
+.roboto {
   font-family: 'Roboto', sans-serif;
+}
+
+.app-name {
   font-weight: 500;
   font-size: 5rem;
   color: var(--white);

@@ -6,9 +6,8 @@
 import './vendors/angular.min';
 import './vendors/angular-route.min';
 
-//  Chart.js & configuration
+//  Chart.js
 import {Chart} from './vendors/Chart.min';
-import './chartConfig';
 
 //  Configuration
 import {appConfig} from './appConfig';
