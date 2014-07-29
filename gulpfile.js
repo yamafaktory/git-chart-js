@@ -13,11 +13,12 @@ var uglify      = require('gulp-uglify');
 var merge       = require('merge-stream');
 var source      = require('vinyl-source-stream');
 
-es6ify.traceurOverrides = { blockBinding: true};
+es6ify.traceurOverrides = { blockBinding : true };
 
 var path = {
   vendors : [
     './bower_components/angular/angular.min.js',
+    './bower_components/angular-animate/angular-animate.min.js',
     './bower_components/angular-route/angular-route.min.js',
     './bower_components/Chart.js/Chart.min.js'
   ],
@@ -56,16 +57,16 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('compile', function () {
-  return browserify({ debug: true })
+  return browserify({ debug : true })
     .add(es6ify.runtime)
     .transform(es6ify)
-    .require(require.resolve('./src/js/app.js'), { entry: true })
+    .require(require.resolve('./src/js/app.js'), { entry : true })
     .bundle()
     .pipe(source('app.js'))
     .pipe(streamify(ngAnnotate()))
-    //.pipe(streamify(uglify()))
+    .pipe(streamify(uglify({ mangle : false })))
     .pipe(gulp.dest('./build/js'))
-    .pipe(browserSync.reload({stream:true, once: true}));
+    .pipe(browserSync.reload({ stream : true, once : true }));
 });
 
 gulp.task('vendors', function () {
@@ -75,9 +76,9 @@ gulp.task('vendors', function () {
 
 gulp.task('html', function() {
   return gulp.src('./src/html/*.html')
-    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(htmlmin({ collapseWhitespace : true }))
     .pipe(gulp.dest('./build/html'))
-    .pipe(browserSync.reload({stream:true}));
+    .pipe(browserSync.reload({ stream : true }));
 });
 
 gulp.task('lint', function () {
@@ -95,14 +96,14 @@ gulp.task('myth+bootstrap', function () {
   return merge(bootstrap, other)
     .pipe(concat('style.css'))
     .pipe(gulp.dest('./build/css'))
-    .pipe(browserSync.reload({stream:true}));
+    .pipe(browserSync.reload({ stream : true }));
 });
 
 gulp.task('svgmin', function () {
   return gulp.src('./src/images/svg/*.svg')
     .pipe(svgmin())
     .pipe(gulp.dest('./build/images'))
-    .pipe(browserSync.reload({stream:true}));
+    .pipe(browserSync.reload({ stream : true }));
 });
 
 gulp.task('watch', function () {

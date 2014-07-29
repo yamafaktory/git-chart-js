@@ -2,8 +2,9 @@
 
 //  Imports
 
-//  Angular & angular-route
+//  Angular, angular-animate & angular-route
 import './vendors/angular.min';
+import './vendors/angular-animate.min';
 import './vendors/angular-route.min';
 
 //  Chart.js
