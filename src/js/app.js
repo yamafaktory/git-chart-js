@@ -22,17 +22,16 @@ import {appDirectives} from './appDirectives';
 //  Factories
 import {appFactories} from './appFactories';
 
-//  Main app
+/**
+ * Main app
+ * @ngInject
+ */
 angular
   .module('app', [
     'appControllers',
     'appDirectives',
     'appFactories',
+    'ngAnimate',
     'ngRoute'
   ])
-  .config([
-    '$httpProvider',
-    '$locationProvider',
-    '$routeProvider',
-    appConfig
-  ]);
+  .config(appConfig);

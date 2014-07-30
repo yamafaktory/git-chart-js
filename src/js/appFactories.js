@@ -1,5 +1,14 @@
 //  Factories module
 
+function LocateFactory () {
+  var LocateFactory = {};
+  LocateFactory.showHeader = true;
+  LocateFactory.setState = state => {
+    LocateFactory.showHeader = state;
+  };
+  return LocateFactory;
+}
+
 /**
  * ResultsFactory
  * @ngInject
@@ -33,4 +42,5 @@ function ResultsFactory ($http) {
 //  Export as appFactories
 export let appFactories = angular.module('appFactories', [])
   //  Define ResultsFactory
-  .factory('ResultsFactory', ResultsFactory);
+  .factory('ResultsFactory', ResultsFactory)
+  .factory('LocateFactory', LocateFactory);
