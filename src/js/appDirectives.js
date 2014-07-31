@@ -4,23 +4,25 @@
  * gitChart
  * @ngInject
  */
-function gitChart ($window, $document, ResultsFactory) {
+function gitChart ($window, ResultsFactory) {
   return {
-    restrict : 'E',
+    restrict    : 'E',
     templateUrl : '/html/git-chart.html',
-    link     : function (scope, element, attrs) {
+    link        : function (scope, element, attrs) {
       let {context, options} = {
         context : document.querySelector('#chart').getContext('2d'),
         options : {
-          responsive            : true,
-          segmentShowStroke     : true,
-          segmentStrokeColor    : 'rgba(255, 255, 255, 1)',
-          segmentStrokeWidth    : 1,
-          percentageInnerCutout : 60,
-          animationSteps        : 30,
-          animationEasing       : 'easeOut',
-          animateRotate         : true,
-          animateScale          : false
+          animationSteps          : 30,
+          animationEasing         : 'easeOutQuart',
+          animateRotate           : true,
+          animateScale            : false,
+          percentageInnerCutout   : 60,
+          segmentShowStroke       : false,
+          tooltipFontSize         : 20,
+          tooltipTitleFontFamily  : "'Roboto', sans-serif",
+          tooltipCaretSize        : 10,
+          tooltipCornerRadius     : 0,
+          tooltipTemplate         : '<%if (label){%><%=label%> <%}%>| <%= value %> stars'
         }
       };
       new $window.Chart(context).Doughnut(ResultsFactory.results, options);

@@ -6,11 +6,6 @@
   --white: rgba(255, 255, 255, 1);
 }
 
-main,
-header {
-  width: 100%;
-}
-
 .roboto {
   font-family: 'Roboto', sans-serif;
 }
@@ -63,12 +58,26 @@ header {
   background: var(--pink-700);
 }
 
-main.ng-enter {
-  animation: fadeIn 2s cubic-bezier(.175, .885, .320, 1);
+main,
+header {
+  width: 100%;
+}
+
+header {
+  z-index: 1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .4);
+}
+
+main {
+  z-index: 0;
 }
 
 header.ng-leave {
   animation: fadeOut 2s cubic-bezier(.175, .885, .320, 1);
+}
+
+main.ng-enter {
+  animation: fadeIn 2s cubic-bezier(.175, .885, .320, 1);
 }
 
 @keyframes fadeIn {
