@@ -4,10 +4,10 @@
  * gitChart
  * @ngInject
  */
-function gitChart (ResultsFactory) {
+function gitChart ($window, $document, ResultsFactory) {
   return {
     restrict : 'E',
-    template : ['<canvas id="chart" class="roboto" height="400" width="400"></canvas>'].join(''),
+    templateUrl : '/html/git-chart.html',
     link     : function (scope, element, attrs) {
       let {context, options} = {
         context : document.querySelector('#chart').getContext('2d'),
@@ -23,12 +23,12 @@ function gitChart (ResultsFactory) {
           animateScale          : false
         }
       };
-      new Chart(context).Doughnut(ResultsFactory.results, options);
+      new $window.Chart(context).Doughnut(ResultsFactory.results, options);
     }
   };
 }
 
 //  Export as appDirectives
 export let appDirectives = angular.module('appDirectives', [])
-  //  Define ChartDirective
+  //  Attach directives
   .directive('gitChart', gitChart);

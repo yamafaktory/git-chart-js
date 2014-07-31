@@ -63,16 +63,20 @@ header {
   background: var(--pink-700);
 }
 
-#main.ng-enter {
-  animation: enter 1s linear;
+main.ng-enter {
+  animation: fadeIn 2s cubic-bezier(.175, .885, .320, 1);
 }
 
-@keyframes enter {
+header.ng-leave {
+  animation: fadeOut 2s cubic-bezier(.175, .885, .320, 1);
+}
+
+@keyframes fadeIn {
   from  { opacity: 0; }
   to    { opacity: 1; }
 }
 
-@keyframes leave {
-  from  { opacity: 0; }
-  to    { opacity: 1; }
+@keyframes fadeOut {
+  from  { opacity: 1; }
+  to    { opacity: 0; }
 }

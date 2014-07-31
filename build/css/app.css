@@ -76,12 +76,17 @@ header {
   background: rgba(194, 24, 91, 1);
 }
 
-#main.ng-enter {
-  -webkit-animation: enter 1s linear;
-  animation: enter 1s linear;
+main.ng-enter {
+  -webkit-animation: fadeIn 2s cubic-bezier(.175, .885, .320, 1);
+  animation: fadeIn 2s cubic-bezier(.175, .885, .320, 1);
 }
 
-@-webkit-keyframes enter {
+header.ng-leave {
+  -webkit-animation: fadeOut 2s cubic-bezier(.175, .885, .320, 1);
+  animation: fadeOut 2s cubic-bezier(.175, .885, .320, 1);
+}
+
+@-webkit-keyframes fadeIn {
   from {
     opacity: 0;
   }
@@ -91,7 +96,7 @@ header {
   }
 }
 
-@keyframes enter {
+@keyframes fadeIn {
   from {
     opacity: 0;
   }
@@ -101,22 +106,22 @@ header {
   }
 }
 
-@-webkit-keyframes leave {
+@-webkit-keyframes fadeOut {
   from {
-    opacity: 0;
+    opacity: 1;
   }
 
   to {
-    opacity: 1;
+    opacity: 0;
   }
 }
 
-@keyframes leave {
+@keyframes fadeOut {
   from {
-    opacity: 0;
+    opacity: 1;
   }
 
   to {
-    opacity: 1;
+    opacity: 0;
   }
 }

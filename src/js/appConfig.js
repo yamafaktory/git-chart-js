@@ -12,8 +12,8 @@ export function appConfig ($httpProvider, $locationProvider, $routeProvider) {
     }).
     when('/result/:id/', {
       templateUrl   : '/html/result.html',
-      controller    : 'SearchController',
-      controllerAs  : 'search',
+      controller    : 'ChartController',
+      controllerAs  : 'chart',
       resolve       : {
         load: function($route, ResultsFactory){
           return ResultsFactory.getResults($route.current.params.id);
