@@ -6,6 +6,7 @@ A simple chart rendering Angular app that uses the Github API to generate a char
 A lot of cool technologies are used:
 
 * ES6 syntax and modules
-* Browserify
+* [Browserify](http://browserify.org/)
+* [Chart.js](http://www.chartjs.org/)
 
 [Work in progress]
