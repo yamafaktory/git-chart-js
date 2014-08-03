@@ -4,10 +4,13 @@
  * ChartController
  * @ngInject
  */
-function ChartController (ResultsFactory) {
+function ChartController ($location, ResultsFactory) {
   //  Inject results and query into the scope
   this.results = ResultsFactory.results;
   this.query = ResultsFactory.query;
+  this.return = () => {
+    $location.path(`/search`);
+  };
 }
 
 /**
