@@ -8,7 +8,7 @@ function ColorFactory () {
   //  Generate a random color
   //  Color palette from Google Material Design
   let ColorFactory = {};
-  //  RGB values
+  //  19 RGB values
   ColorFactory.colors = [
     '229, 28, 35',    //  Red
     '233, 30, 99',    //  Pink
@@ -30,9 +30,23 @@ function ColorFactory () {
     '158, 158, 158',  //  Grey
     '96, 125, 139'    //  Blue Grey
   ];
+  //  Init cache index
+  ColorFactory.lastRandomIndex = -1;
   //  Method to get a random tuple of color & highlight
-  ColorFactory.getRandomColor = () => {
-    let randomColor = ColorFactory.colors[Math.floor(Math.random() * 18)];
+  ColorFactory.getRandomColor = function getRandomColor () {
+    //  Generate a random integer index from 0 to 18
+    let currentRandomIndex = Math.floor(Math.random() * 18);
+    //  Get the corresponding color
+    let randomColor = ColorFactory.colors[currentRandomIndex];
+    if (currentRandomIndex === ColorFactory.lastRandomIndex) {
+      //  If the generate color is the same as last generated one
+      //  Make a recursive call of the named function expression
+      return getRandomColor();
+    } else {
+      //  Keep track of the current index
+      ColorFactory.lastRandomIndex = currentRandomIndex;
+    }
+    //  Expose the generated tuple
     return {
       color     : `rgba(${randomColor}, .7)`,
       highlight : `rgb(${randomColor})`
