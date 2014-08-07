@@ -66,11 +66,11 @@ main > section {
 }
 
 main.ng-enter {
-  animation: fadeIn .3s var(--bezier);
+  animation: enter .3s var(--bezier);
 }
 
 main.ng-leave {
-  animation: fadeOut .3s var(--bezier);
+  animation: leave .3s var(--bezier);
 }
 
 @media screen and (min-width: 768px) {
@@ -87,12 +87,12 @@ main.ng-leave {
 
 }
 
-@keyframes fadeIn {
+@keyframes enter {
   from  { opacity: 0; transform: translate3d(-100%, 0, 0); }
   to    { opacity: 1; transform: none; }
 }
 
-@keyframes fadeOut {
+@keyframes leave {
   from  { opacity: 1; transform: none;}
-  to    { opacity: 0; transform: translate3d(-100%, 0, 0); }
+  to    { opacity: 0; transform: translate3d(0, -100%, 0); }
 }
