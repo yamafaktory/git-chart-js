@@ -7,7 +7,7 @@
     <h2>{{ chart.query }}</h2>
     <ul class="list-group">
       <li ng-repeat="result in chart.results" class="list-group-item">
-        <span class="badge">{{ result.value }}</span>
+        <span class="badge" style="background-color: {{ result.color }};">{{ result.value }}</span>
         <a href="{{ result.homepage }}">{{ result.label }}</a>
       </li>
     </ul>

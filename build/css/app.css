@@ -53,7 +53,8 @@ main {
 
 main > section {
   text-align: center;
-  background-color: rgba(247, 247, 247, 0.9440000000000001);
+  background-color: rgba(255, 255, 255, .95);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
   padding: 4rem;
 }
 

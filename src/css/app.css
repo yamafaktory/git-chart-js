@@ -6,6 +6,8 @@
   --grey: rgba(0, 0, 0, .44);;
   --white: rgba(255, 255, 255, .95);
   --bezier: cubic-bezier(.175, .885, .320, 1);
+  --light-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+  --dark-shadow: 0 1px 5px rgba(0, 0, 0, .7);
 }
 
 .roboto {
@@ -44,14 +46,14 @@
 header {
   background: rgba(255, 255, 255, 1);
   z-index: 1;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, .7);
+  box-shadow: var(--dark-shadow);
   transition: 1s var(--bezier) all;
 }
 
 header.minimize {
   z-index: 0;
   opacity: .7;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+  box-shadow: var(--light-shadow);
   transition: 1s var(--bezier) opacity, z-index, box-shadow;
 }
 
@@ -61,7 +63,8 @@ main {
 
 main > section {
   text-align: center;
-  background-color: color(var(--grey) tint(90%));
+  background-color: var(--white);
+  box-shadow: var(--light-shadow);
   padding: 4rem;
 }
 
