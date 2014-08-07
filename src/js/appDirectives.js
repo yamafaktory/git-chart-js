@@ -4,7 +4,7 @@
  * gitChart
  * @ngInject
  */
-function gitChart ($window, ResultsFactory) {
+function gitChart (ResultsFactory) {
   return {
     restrict    : 'E',
     templateUrl : '/html/git-chart.html',
@@ -12,8 +12,8 @@ function gitChart ($window, ResultsFactory) {
       let {context, options} = {
         context : document.querySelector('#chart').getContext('2d'),
         options : {
-          animationSteps          : 30,
-          animationEasing         : 'easeOutQuart',
+          animationSteps          : 80,
+          animationEasing         : 'cubic-bezier(.175, .885, .320, 1)',
           animateRotate           : true,
           animateScale            : false,
           percentageInnerCutout   : 60,
@@ -25,7 +25,7 @@ function gitChart ($window, ResultsFactory) {
           tooltipTemplate         : '<%if (label){%><%=label%> <%}%>| <%= value %> stars'
         }
       };
-      new $window.Chart(context).Doughnut(ResultsFactory.results, options);
+      new window.Chart(context).Doughnut(ResultsFactory.results, options);
     }
   };
 }

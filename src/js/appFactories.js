@@ -80,10 +80,12 @@ function ResultsFactory ($http, ColorFactory) {
           let {color, highlight} = ColorFactory.getRandomColor();
           //  Push element
           ResultsFactory.results.push({
-            label     : element.name,
-            value     : element.stargazers_count,
-            color     : color,
-            highlight : highlight
+            label       : element.name,
+            value       : element.stargazers_count,
+            description : element.description,
+            homepage    : element.homepage,
+            color       : color,
+            highlight   : highlight
           });
         }
       })

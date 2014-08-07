@@ -3,89 +3,96 @@
   --pink-500: rgba(233, 30, 99, 1);
   --pink-700: rgba(194, 24, 91, 1);
   --light-blue-a200: rgba(64, 196, 255, 1);
-  --white: rgba(255, 255, 255, 1);
+  --grey: rgba(0, 0, 0, .44);;
+  --white: rgba(255, 255, 255, .95);
+  --bezier: cubic-bezier(.175, .885, .320, 1);
 }
 
 .roboto {
   font-family: 'Roboto', sans-serif;
 }
 
+.app {
+  background: url('../images/bitmap/github-office.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+}
+
 .app-name {
   font-weight: 500;
-  font-size: 5rem;
-  color: var(--white);
+  font-size: 3rem;
+  color: var(--grey);
+  margin-left: 2rem;
 }
 
-.full-height-flex {
-  min-height: 100vh;
-}
-
-.half-height-flex {
-  height: 50vh;
-}
-
-.flex {
-	display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.row-flex {
-  flex-direction: row;
-}
-
-.column-flex {
-  flex-direction: column;
-}
-
-.flex-start {
-  align-self: flex-start;
-}
-
-.flex-end {
-  align-self: flex-end;
+.full {
+  height: 100%;
 }
 
 .pink-100 {
-  background: var(--pink-100);
+  color: var(--pink-100);
 }
 
 .pink-500 {
-  background: var(--pink-500);
+  color: var(--pink-500);
 }
 
 .pink-700 {
-  background: var(--pink-700);
-}
-
-main,
-header {
-  width: 100%;
+  color: var(--pink-700);
 }
 
 header {
+  background: rgba(255, 255, 255, 1);
   z-index: 1;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, .4);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, .7);
+  transition: 1s var(--bezier) all;
+}
+
+header.minimize {
+  z-index: 0;
+  opacity: .7;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+  transition: 1s var(--bezier) opacity, z-index, box-shadow;
 }
 
 main {
   z-index: 0;
 }
 
-header.ng-leave {
-  animation: fadeOut 2s cubic-bezier(.175, .885, .320, 1);
+main > section {
+  text-align: center;
+  background-color: color(var(--grey) tint(90%));
+  padding: 4rem;
 }
 
 main.ng-enter {
-  animation: fadeIn 2s cubic-bezier(.175, .885, .320, 1);
+  animation: fadeIn .3s var(--bezier);
+}
+
+main.ng-leave {
+  animation: fadeOut .3s var(--bezier);
+}
+
+@media screen and (min-width: 768px) {
+
+  .app {
+    background: url('../images/bitmap/github-office-large.jpg') no-repeat center center fixed;
+    background-size: cover;  
+  }
+
+  .app-name {
+    font-size: 4rem;
+    margin-left: 3rem;
+  }
+
 }
 
 @keyframes fadeIn {
-  from  { opacity: 0; }
-  to    { opacity: 1; }
+  from  { opacity: 0; transform: translate3d(-100%, 0, 0); }
+  to    { opacity: 1; transform: none; }
 }
 
 @keyframes fadeOut {
-  from  { opacity: 1; }
-  to    { opacity: 0; }
+  from  { opacity: 1; transform: none;}
+  to    { opacity: 0; transform: translate3d(-100%, 0, 0); }
 }

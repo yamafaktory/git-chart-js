@@ -4,11 +4,12 @@
  * ChartController
  * @ngInject
  */
-function ChartController ($location, ResultsFactory) {
+function ChartController ($location, $scope, ResultsFactory) {
   //  Inject results and query into the scope
   this.results = ResultsFactory.results;
   this.query = ResultsFactory.query;
   this.return = () => {
+    $scope.$emit('minimizeHeader', false);
     $location.path(`/search`);
   };
 }
@@ -19,9 +20,9 @@ function ChartController ($location, ResultsFactory) {
  */
 function HeaderController ($scope) {
   //  Default header state
-  this.show = true;
-  $scope.$on('showHeader', (event, state) => {
-    this.show = state;
+  this.minimize = false;
+  $scope.$on('minimizeHeader', (event, state) => {
+    this.minimize = state;
   });
 }
 
@@ -32,7 +33,7 @@ function HeaderController ($scope) {
 function SearchController ($location, $scope, ResultsFactory) {
   this.query = '';
   this.go = () => {
-    $scope.$emit('showHeader', false);
+    $scope.$emit('minimizeHeader', true);
     $location.path(`/result/${this.query}`);
   };
 }

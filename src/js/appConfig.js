@@ -15,7 +15,7 @@ export function appConfig ($httpProvider, $locationProvider, $routeProvider) {
       controller    : 'ChartController',
       controllerAs  : 'chart',
       resolve       : {
-        load: function($route, ResultsFactory){
+        load : function ($route, ResultsFactory) {
           return ResultsFactory.getResults($route.current.params.id);
         }
       }

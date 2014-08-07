@@ -2,135 +2,135 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.app {
+  background: url('../images/bitmap/github-office.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+}
+
 .app-name {
   font-weight: 500;
-  font-size: 5rem;
-  color: rgba(255, 255, 255, 1);
+  font-size: 3rem;
+  color: rgba(0, 0, 0, .44);
+  margin-left: 2rem;
 }
 
-.full-height-flex {
-  min-height: 100vh;
-}
-
-.half-height-flex {
-  height: 50vh;
-}
-
-.flex {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.row-flex {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-.column-flex {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.flex-start {
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
-}
-
-.flex-end {
-  -webkit-align-self: flex-end;
-  -ms-flex-item-align: end;
-  align-self: flex-end;
+.full {
+  height: 100%;
 }
 
 .pink-100 {
-  background: rgba(248, 187, 208, 1);
+  color: rgba(248, 187, 208, 1);
 }
 
 .pink-500 {
-  background: rgba(233, 30, 99, 1);
+  color: rgba(233, 30, 99, 1);
 }
 
 .pink-700 {
-  background: rgba(194, 24, 91, 1);
-}
-
-main,
-header {
-  width: 100%;
+  color: rgba(194, 24, 91, 1);
 }
 
 header {
+  background: rgba(255, 255, 255, 1);
   z-index: 1;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, .4);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, .7);
+  -webkit-transition: 1s cubic-bezier(.175, .885, .320, 1) all;
+  transition: 1s cubic-bezier(.175, .885, .320, 1) all;
+}
+
+header.minimize {
+  z-index: 0;
+  opacity: .7;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+  -webkit-transition: 1s cubic-bezier(.175, .885, .320, 1) opacity, z-index, box-shadow;
+  transition: 1s cubic-bezier(.175, .885, .320, 1) opacity, z-index, box-shadow;
 }
 
 main {
   z-index: 0;
 }
 
-header.ng-leave {
-  -webkit-animation: fadeOut 2s cubic-bezier(.175, .885, .320, 1);
-  animation: fadeOut 2s cubic-bezier(.175, .885, .320, 1);
+main > section {
+  text-align: center;
+  background-color: rgba(247, 247, 247, 0.9440000000000001);
+  padding: 4rem;
 }
 
 main.ng-enter {
-  -webkit-animation: fadeIn 2s cubic-bezier(.175, .885, .320, 1);
-  animation: fadeIn 2s cubic-bezier(.175, .885, .320, 1);
+  -webkit-animation: fadeIn .3s cubic-bezier(.175, .885, .320, 1);
+  animation: fadeIn .3s cubic-bezier(.175, .885, .320, 1);
+}
+
+main.ng-leave {
+  -webkit-animation: fadeOut .3s cubic-bezier(.175, .885, .320, 1);
+  animation: fadeOut .3s cubic-bezier(.175, .885, .320, 1);
+}
+
+@media screen and (min-width: 768px) {
+  .app {
+    background: url('../images/bitmap/github-office-large.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+
+  .app-name {
+    font-size: 4rem;
+    margin-left: 3rem;
+  }
 }
 
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
   }
 
   to {
     opacity: 1;
+    -webkit-transform: none;
+    transform: none;
   }
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
   }
 
   to {
     opacity: 1;
+    -webkit-transform: none;
+    transform: none;
   }
 }
 
 @-webkit-keyframes fadeOut {
   from {
     opacity: 1;
+    -webkit-transform: none;
+    transform: none;
   }
 
   to {
     opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
   }
 }
 
 @keyframes fadeOut {
   from {
     opacity: 1;
+    -webkit-transform: none;
+    transform: none;
   }
 
   to {
     opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
   }
 }

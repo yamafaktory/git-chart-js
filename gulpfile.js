@@ -4,6 +4,7 @@ var es6ify      = require('es6ify');
 var gulp        = require('gulp');
 var concat      = require('gulp-concat');
 var htmlmin     = require('gulp-htmlmin');
+var imagemin    = require('gulp-imagemin');
 var jshint      = require('gulp-jshint');
 var ngAnnotate  = require('gulp-ng-annotate');
 var myth        = require('gulp-myth');
@@ -41,6 +42,7 @@ var tasks = [
   'compile',
   'html',
   'myth+bootstrap',
+  'bitmap',
   'svgmin',
   'browser-sync',
   'watch'
@@ -78,6 +80,13 @@ gulp.task('html', function() {
   return gulp.src('./src/html/*.html')
     .pipe(htmlmin({ collapseWhitespace : true }))
     .pipe(gulp.dest('./build/html'))
+    .pipe(browserSync.reload({ stream : true }));
+});
+
+gulp.task('bitmap', function () {
+  return gulp.src('./src/images/bitmap/*')
+    .pipe(imagemin())
+    .pipe(gulp.dest('./build/images/bitmap'))
     .pipe(browserSync.reload({ stream : true }));
 });
 

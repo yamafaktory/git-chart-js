@@ -1,7 +1,15 @@
-<section class="flex column-flex" ng-click="chart.return()">
+<section ng-click="chart.return()">
   <h2 ng-show="chart.results.length === 0">
   No results for <strong>{{ chart.query }}</strong>!
   </h2>
-  <git-chart ng-show="chart.results.length !== 0"></git-chart>
-  <h2 ng-show="chart.results.length !== 0">{{ chart.query }}</h2>
+  <div ng-show="chart.results.length !== 0">
+    <git-chart></git-chart>
+    <h2>{{ chart.query }}</h2>
+    <ul class="list-group">
+      <li ng-repeat="result in chart.results" class="list-group-item">
+        <span class="badge">{{ result.value }}</span>
+        <a href="{{ result.homepage }}">{{ result.label }}</a>
+      </li>
+    </ul>
+  </div>
 </section>
