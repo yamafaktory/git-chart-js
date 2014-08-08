@@ -15,10 +15,6 @@
   margin-left: 2rem;
 }
 
-.full {
-  height: 100%;
-}
-
 .pink-100 {
   color: rgba(248, 187, 208, 1);
 }
@@ -73,10 +69,11 @@ main.ng-leave {
 }
 
 git-chart {
-  text-align: center;
-  width: 400px;
+  width: 200px;
   display: block;
 }
+
+/* Small devices */
 
 @media screen and (min-width: 768px) {
   .app {
@@ -90,7 +87,23 @@ git-chart {
   }
 
   git-chart {
+    width: 400px;
+  }
+}
+
+/* Medium devices */
+
+@media screen and (min-width: 992px) {
+  git-chart {
     width: 600px;
+  }
+}
+
+/* Large devices */
+
+@media screen and (min-width: 1200px) {
+  git-chart {
+    width: 800px;
   }
 }
 
