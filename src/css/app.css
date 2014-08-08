@@ -68,12 +68,22 @@ main > section {
   padding: 4rem;
 }
 
+main ul {
+  text-align: left;
+}
+
 main.ng-enter {
   animation: enter .3s var(--bezier);
 }
 
 main.ng-leave {
   animation: leave .3s var(--bezier);
+}
+
+git-chart {
+  text-align: center;
+  width: 400px;
+  display: block;
 }
 
 @media screen and (min-width: 768px) {
@@ -86,6 +96,10 @@ main.ng-leave {
   .app-name {
     font-size: 4rem;
     margin-left: 3rem;
+  }
+
+  git-chart {
+    width: 600px;
   }
 
 }

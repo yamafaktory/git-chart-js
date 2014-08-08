@@ -17,6 +17,8 @@ function gitChart (ResultsFactory) {
           animateRotate           : true,
           animateScale            : false,
           percentageInnerCutout   : 60,
+          responsive              : true,
+          maintainAspectRatio     : true,
           segmentShowStroke       : false,
           tooltipFontSize         : 20,
           tooltipTitleFontFamily  : "'Roboto', sans-serif",
