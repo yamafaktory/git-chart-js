@@ -17,7 +17,6 @@
 .app {
   background: url('../images/bitmap/github-office.jpg') no-repeat center center fixed;
   background-size: cover;
-  height: 100%;
 }
 
 .app-name {
@@ -55,6 +54,7 @@ header.minimize {
 
 main {
   z-index: 0;
+  margin-bottom: 2rem;
 }
 
 main > section {
