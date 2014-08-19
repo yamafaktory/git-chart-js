@@ -99,10 +99,10 @@ gulp.task('lint', function () {
 gulp.task('myth+bootstrap', function () {
   var bootstrap = gulp.src(path.bootstrap)
     .pipe(gulp.dest('./build/css'));
-  var other = gulp.src('./src/css/*.css')
+  var css = gulp.src(path.css)
     .pipe(myth())
     .pipe(gulp.dest('./build/css'));
-  return merge(bootstrap, other)
+  return merge(bootstrap, css)
     .pipe(concat('style.css'))
     .pipe(gulp.dest('./build/css'))
     .pipe(browserSync.reload({ stream : true }));

@@ -8,5 +8,3 @@ A lot of cool technologies are used:
 * ES6 syntax and modules
 * [Browserify](http://browserify.org/)
 * [Chart.js](http://www.chartjs.org/)
-
-[Work in progress]
